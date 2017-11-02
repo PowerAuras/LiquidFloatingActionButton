@@ -96,7 +96,9 @@ class ViewController: UIViewController, LiquidFloatingActionButtonDataSource, Li
         cells.append(cellFactory("ic_cloud"))
         cells.append(customCellFactory("ic_system"))
         cells.append(cellFactory("ic_place"))
-        
+        cells.append(cellFactory("ic_cloud"))
+        cells.append(customCellFactory("ic_system"))
+        cells.append(cellFactory("ic_place"))
         let floatingFrame = CGRect(x: self.view.frame.width - 56 - 16, y: self.view.frame.height - 56 - 16, width: 56, height: 56)
         let bottomRightButton = createButton(floatingFrame, .up)
         

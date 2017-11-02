@@ -8,7 +8,8 @@
 
 import Foundation
 import QuartzCore
-
+let openDuration: CGFloat = 0.6
+let openDelay: CGFloat = 0.05
 // LiquidFloatingButton DataSource methods
 @objc public protocol LiquidFloatingActionButtonDataSource {
     func numberOfCells(_ liquidFloatingActionButton: LiquidFloatingActionButton) -> Int
@@ -272,7 +273,7 @@ class ActionBarBaseView : UIView {
 
 class CircleLiquidBaseView : ActionBarBaseView {
 
-    let openDuration: CGFloat  = 0.6
+//    let openDuration: CGFloat  = 0.6
     let closeDuration: CGFloat = 0.2
     let viscosity: CGFloat     = 0.65
     var animateStyle: LiquidFloatingActionButtonAnimateStyle = .up
@@ -387,7 +388,7 @@ class CircleLiquidBaseView : ActionBarBaseView {
     }
     
     func updateOpen() {
-        update(0.1, duration: openDuration) { cell, i, ratio in
+        update(openDelay, duration: openDuration) { cell, i, ratio in
             let posRatio = ratio > CGFloat(i) / CGFloat(self.openingCells.count) ? ratio : 0
             let distance = (cell.frame.height * 0.5 + CGFloat(i + 1) * cell.frame.height * 1.5) * posRatio
             cell.center = self.center.plus(self.differencePoint(distance))
