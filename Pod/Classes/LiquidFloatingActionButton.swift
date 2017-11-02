@@ -8,8 +8,8 @@
 
 import Foundation
 import QuartzCore
-let openDuration: CGFloat = 0.6
-let openDelay: CGFloat = 0.05
+let openDuration: CGFloat = 0.3
+let openDelay: CGFloat = 0.1
 // LiquidFloatingButton DataSource methods
 @objc public protocol LiquidFloatingActionButtonDataSource {
     func numberOfCells(_ liquidFloatingActionButton: LiquidFloatingActionButton) -> Int
